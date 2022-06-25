@@ -25,6 +25,7 @@ const Navbar = () => {
         <>
           <Link to="/log-in">Log In</Link>
           <Link to="/register">Register</Link>
+          <Link to="/profile/search">Search for Profile</Link>
         </>
       )}
     </nav>

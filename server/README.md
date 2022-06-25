@@ -6,9 +6,11 @@ My Secret Places
 
 Home - / - Display map and pictures that are clickable, log in button, search function for names, places etc.
 
-Log In - /log-in - Allows existing user to log-in. If not registered yet, user can click and got to register page.
+Log In - /log-in - Allows existing user to log-in. If not registered yet, user can click and got to register page.✅
 
-Register - /register - Allow visitor to create account with name, email, password and profile picture.
+Register - /register - Allow visitor to create account with name, email, password and profile picture.✅
+
+Profile Search - /profile/search - Lists the searched profiles with pictures.✅
 
 Profile - /profile/:id - Visualize users' profile and their places and pictures,
 probably making the pin on the map clickable to link to the pictures,
@@ -16,7 +18,7 @@ plus links to add place and edit profile.
 
 Profile Edit - /profile/edit - Allows authenticated user to edit their profile and delete profile.
 
-Add Place - /place/add - Allows user to post place with pictures and limited text.
+Place Add - /place/add - Allows user to post place with pictures and limited text.
 
 Place Detail - /place/:id - Visualize single place, allows authenticated user to go to the profile page of creator,
 creator can click the button to edit the place.
@@ -57,10 +59,10 @@ AuthenticationForm.jsx + scss
 GenericMap.jsx
 PlaceCard.jsx
 PlaceCreateForm.jsx
-PlaceInputMap.jsx
+MapInput.jsx✅
 PlaceMap.jsx (by click on marker you get directed to placeDetailPage)
 PlaceSearchForm.jsx
-ImageInput.jsx
+ImageInput.jsx✅
 MultipleImageInput.jsx
 Navbar.jsx
 ProfileCard.jsx
@@ -69,14 +71,14 @@ ProfileCard.jsx
 
 ## Models
 
-### User
+### User✅
 
 name: String, required, trim
 email: String, required, trim, lowercase
 passwordHashAndSalt: String, required
 picture: String
 
-### Place
+### Place✅
 
 pictures: String, required, maxNum: 5
 position: { type: String, default: 'Point', coordinates: [ Number ] }
@@ -98,7 +100,7 @@ POST - '/authentication/sign-out' - Signs out user.✅
 
 GET - '/authentication/me' - Loads information about authenticated user.✅
 
-GET - '/profile/search' - Allows user to search for other user profiles.
+GET - '/profile/search' - Allows user to search for other user profiles.✅
 
 GET - '/profile/:id' - Loads single users profile.
 
