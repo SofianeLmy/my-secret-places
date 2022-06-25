@@ -90,19 +90,19 @@ GET - '/' - Shows map with places. ({ places: [] })
 
 GET - '/' - Shows some recently added pictures. ({ pictures: [] })
 
-POST - '/authentication/sign-up' - Registers new user.
+POST - '/authentication/sign-up' - Registers new user.✅
 
-POST - '/authentication/sign-in' - Authenticates existing user.
+POST - '/authentication/sign-in' - Authenticates existing user.✅
 
-POST - '/authentication/sign-out' - Signs out user.
+POST - '/authentication/sign-out' - Signs out user.✅
 
-GET - '/authentication/me' - Loads information about authenticated user.
+GET - '/authentication/me' - Loads information about authenticated user.✅
 
 GET - '/profile/search' - Allows user to search for other user profiles.
 
 GET - '/profile/:id' - Loads single users profile.
 
-PATCH - '/profile' - Edit authenticated users profile.
+PATCH - '/profile/:id/edit' - Edit authenticated users profile.
 
 GET - '/place/search' - Allows user to search for places.
 

@@ -1,15 +1,18 @@
 'use strict';
 
-//const ImageKit = require('ImageKit');
 const express = require('express');
 const router = express.Router();
 const routeGuard = require('./../middleware/route-guard');
 
-router.get('/', (req, res, next) => {
+router.get('/search', (req, res, next) => {
   res.json({ type: 'success', data: { title: 'Hello World' } });
 });
 
-router.get('/private', routeGuard, (req, res, next) => {
+router.get('/:id/edit', routeGuard, (req, res, next) => {
+  res.json({});
+});
+
+router.get('/:id', routeGuard, (req, res, next) => {
   res.json({});
 });
 
