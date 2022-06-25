@@ -15,9 +15,13 @@ const schema = new mongoose.Schema({
   },
   passwordHashAndSalt: {
     type: String
+  }, 
+  picture: {
+    type: String
   }
 });
 
 const User = mongoose.model('User', schema);
 
 module.exports = User;
+
