@@ -1,13 +1,13 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useEffect, useState } from "react";
 
-import HomePage from './pages/HomePage';
-import RegisterPage from './pages/RegisterPage';
-import LogInPage from './pages/LogInPage';
+import HomePage from "./pages/HomePage";
+import RegisterPage from "./pages/RegisterPage";
+import LogInPage from "./pages/LogInPage";
 
-import Navbar from './components/Navbar';
-import AuthenticationContext from './context/authentication';
-import { loadUserInformation } from './services/authentication';
+import Navbar from "./components/Navbar";
+import AuthenticationContext from "./context/authentication";
+import { loadUserInformation } from "./services/authentication";
 
 const App = () => {
   const [user, setUser] = useState(null);

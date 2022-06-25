@@ -78,7 +78,7 @@ picture: String
 
 ### Place
 
-picture: String, required, maxNum: 5
+pictures: String, required, maxNum: 5
 position: { type: String, default: 'Point', coordinates: [ Number ] }
 creator: ObjectId, ref: 'User', required
 description: String, maxLength: 50, trim
