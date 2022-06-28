@@ -4,11 +4,13 @@ import { useEffect, useState } from 'react';
 import HomePage from './pages/HomePage';
 import RegisterPage from './pages/RegisterPage';
 import LogInPage from './pages/LogInPage';
+import ProfileSearchPage from './pages/ProfileSearchPage';
+import ProfilePage from './pages/ProfilePage';
+import ProfileEditPage from './pages/ProfileEditPage';
 
 import Navbar from './components/Navbar';
 import AuthenticationContext from './context/authentication';
 import { loadUserInformation } from './services/authentication';
-import ProfileSearchPage from './pages/ProfileSearchPage';
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -28,6 +30,8 @@ const App = () => {
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/log-in" element={<LogInPage />} />
           <Route path="/profile/search" element={<ProfileSearchPage />} />
+          <Route path="/profile/:id" element={<ProfilePage />} />
+          <Route path="/profile/edit" element={<ProfileEditPage />} />
         </Routes>
       </BrowserRouter>
     </AuthenticationContext.Provider>

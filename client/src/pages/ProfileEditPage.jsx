@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ProfileEditPage = () => {
-  return <div></div>;
+  return <div>ProfileEditPage</div>;
 };
 
 export default ProfileEditPage;

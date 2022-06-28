@@ -29,7 +29,7 @@ router.get('/:id', (req, res, next) => {
   User.findById(id)
     .then((document) => {
       user = document;
-      return Place.find({ owner: id });
+      return Place.find({ creator: id });
     })
     .then((places) => {
       res.json({ profile: user, places });
@@ -51,4 +51,3 @@ router.patch('/', routeGuard, (req, res, next) => {
 });
 
 module.exports = router;
-
