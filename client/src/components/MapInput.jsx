@@ -24,9 +24,9 @@ const MapInput = () => {
   return (
     (isLoaded && (
       <GoogleMap
-        mapContainerStyle={{ width: "500px", height: "500px" }}
-        center={{ lat: 42.8, lng: -8.5 }}
-        zoom={10}
+        mapContainerStyle={{ width: "800px", height: "500px" }}
+        center={{ lat: 30, lng: 12 }}
+        zoom={1.8}
         onClick={handleMapClick}
       >
         {marker && <Marker position={marker} />}
