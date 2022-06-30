@@ -110,6 +110,8 @@ GET - '/place/search' - Allows user to search for places.
 
 POST - '/place' - Lists a new place.
 
+POST - '/place/add' - Add a new place.
+
 GET - '/place/:id' - Loads single place.
 
 PATCH - '/place/:id' - Allows creator to edit place.

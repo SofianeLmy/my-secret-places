@@ -10,6 +10,11 @@ import AuthenticationContext from './context/authentication';
 import { loadUserInformation } from './services/authentication';
 import ProfileSearchPage from './pages/ProfileSearchPage';
 
+import PlaceAddPage from './pages/PlaceAddPage';
+import PlaceDetailPage from './pages/PlaceDetailPage';
+import ProfilePage from './pages/ProfilePage';
+import PlaceEditPage from './pages/PlaceEditPage';
+
 const App = () => {
   const [user, setUser] = useState(null);
 
@@ -28,6 +33,10 @@ const App = () => {
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/log-in" element={<LogInPage />} />
           <Route path="/profile/search" element={<ProfileSearchPage />} />
+          <Route path="/profile/:id" element={<ProfilePage />} />
+          <Route path="/place/add" element={<PlaceAddPage />} />
+          <Route path="/place/:id" element={<PlaceDetailPage />} />
+          <Route path="/place/:id/edit" element={<PlaceEditPage />} />
         </Routes>
       </BrowserRouter>
     </AuthenticationContext.Provider>
