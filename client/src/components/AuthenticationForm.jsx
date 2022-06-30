@@ -52,9 +52,10 @@ const AuthenticationForm = (props) => {
           /> */}
           <ImageInput
             image={props.user.picture}
-            onImageChange={(picture) =>
-              props.onUserChange({ ...props.user, picture })
-            }
+            onImageChange={(picture) => {
+              console.log(picture);
+              props.onUserChange({ ...props.user, picture });
+            }}
           />
         </>
       )}
