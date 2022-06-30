@@ -4,11 +4,13 @@ import { useEffect, useState } from 'react';
 import HomePage from './pages/HomePage';
 import RegisterPage from './pages/RegisterPage';
 import LogInPage from './pages/LogInPage';
+import ProfileSearchPage from './pages/ProfileSearchPage';
+import ProfilePage from './pages/ProfilePage';
+import ProfileEditPage from './pages/ProfileEditPage';
 
 import Navbar from './components/Navbar';
 import AuthenticationContext from './context/authentication';
 import { loadUserInformation } from './services/authentication';
-import ProfileSearchPage from './pages/ProfileSearchPage';
 
 import PlaceAddPage from './pages/PlaceAddPage';
 import PlaceDetailPage from './pages/PlaceDetailPage';
