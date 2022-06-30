@@ -16,6 +16,7 @@ const Navbar = () => {
   return (
     <nav>
       <Link to="/">Home</Link>
+      <Link to="/profile/search">Search for Profile</Link>
       {(user && (
         <>
           <span>Welcome {user.name}</span>
@@ -25,7 +26,6 @@ const Navbar = () => {
         <>
           <Link to="/log-in">Log In</Link>
           <Link to="/register">Register</Link>
-          <Link to="/profile/search">Search for Profile</Link>
         </>
       )}
     </nav>
