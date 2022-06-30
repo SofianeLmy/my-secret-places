@@ -6,16 +6,16 @@ import RegisterPage from './pages/RegisterPage';
 import LogInPage from './pages/LogInPage';
 import ProfileSearchPage from './pages/ProfileSearchPage';
 import ProfilePage from './pages/ProfilePage';
-import ProfileEditPage from './pages/ProfileEditPage';
+
+import PlaceAddPage from './pages/PlaceAddPage';
+import PlaceDetailPage from './pages/PlaceDetailPage';
+import PlaceEditPage from './pages/PlaceEditPage';
+
 
 import Navbar from './components/Navbar';
 import AuthenticationContext from './context/authentication';
 import { loadUserInformation } from './services/authentication';
 
-import PlaceAddPage from './pages/PlaceAddPage';
-import PlaceDetailPage from './pages/PlaceDetailPage';
-import ProfilePage from './pages/ProfilePage';
-import PlaceEditPage from './pages/PlaceEditPage';
 
 const App = () => {
   const [user, setUser] = useState(null);
