@@ -34,7 +34,13 @@ const PlaceDetailPage = () => {
             <Link to={`/place/${id}/edit`}>Edit Place</Link>
           )}
           {user && <button>I like it !</button>}
-          <PlaceInputMap position={place.position} />
+          <PlaceInputMap
+            position={place.position}
+            center={{
+              lat: place.position.coordinates[1],
+              lng: place.position.coordinates[0]
+            }}
+          />
           {place.pictures &&
             place.pictures.map((image, index) => (
               <div key={image} className="multiple-image-item">

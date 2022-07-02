@@ -5,6 +5,58 @@ import { Link } from 'react-router-dom';
 import { Marker } from '@react-google-maps/api';
 import GenericMap from '../components/GenericMap';
 
+const PlaceMap = ({ places }) => {
+  const [center, setCenter] = useState({ lat: 0, lng: 0 });
+
+  useEffect(() => {
+    if (places.length) {
+      const positions = places.map((place) => {
+        return {
+          lat: place.position.coordinates[1],
+          lng: place.position.coordinates[0]
+        };
+      });
+
+      const longitudes = positions
+        .map((position) => position.lng)
+        .filter((value) => typeof value === 'number');
+      const latitudes = positions
+        .map((position) => position.lat)
+        .filter((value) => typeof value === 'number');
+
+      const maximumLongitude = Math.max(...longitudes);
+      const minimumLongitude = Math.min(...longitudes);
+
+      const maximumLatitude = Math.max(...latitudes);
+      const minimumLatitude = Math.min(...latitudes);
+
+      const calculatedCenter = {
+        lat: (maximumLatitude + minimumLatitude) / 2,
+        lng: (maximumLongitude + minimumLongitude) / 2
+      };
+
+      setCenter(calculatedCenter);
+    }
+  }, [places]);
+
+  return (
+    <GenericMap center={center}>
+      {places.map((place) => {
+        return (
+          <>
+            <Marker
+              position={{
+                lat: place.position.coordinates[1],
+                lng: place.position.coordinates[0]
+              }}
+            />
+          </>
+        );
+      })}
+    </GenericMap>
+  );
+};
+
 const HomePage = () => {
   const [places, setPlaces] = useState([]);
 
@@ -21,20 +73,7 @@ const HomePage = () => {
 
       <h2>Some of the latest places added</h2>
 
-      <GenericMap>
-        {places.map((place) => {
-          return (
-            <>
-              <Marker
-                position={{
-                  lat: place.position.coordinates[1],
-                  lng: place.position.coordinates[0]
-                }}
-              />
-            </>
-          );
-        })}
-      </GenericMap>
+      <PlaceMap places={places} />
       {places.map((place) => {
         return (
           place.pictures &&
