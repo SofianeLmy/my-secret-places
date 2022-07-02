@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { profileLoad } from '../services/profile';
 import GenericMap from '../components/GenericMap';
 import { Marker } from '@react-google-maps/api';
@@ -22,7 +22,7 @@ const ProfilePage = () => {
     <div>
       {profile && (
         <>
-          <img src={profile.picture} alt={profile.name} />
+          <img src={profile.picture} alt={profile.name} width="200px" />
           <h1>{profile.name}</h1>
         </>
       )}
@@ -46,7 +46,9 @@ const ProfilePage = () => {
             place.pictures &&
             place.pictures.map((image, index) => (
               <div key={image} className="multiple-image-item">
-                <img src={image} alt={`#${index}`} width="200px" />
+                <Link to={`/place/${place._id}`}>
+                  <img src={image} alt={`#${index}`} width="200px" />
+                </Link>
               </div>
             ))
           );

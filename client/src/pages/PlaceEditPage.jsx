@@ -17,7 +17,7 @@ const PlaceEditPage = () => {
   };
 
   useEffect(() => {
-    placeLoad(id).then((data) => setPlace(data.house));
+    placeLoad(id).then((data) => setPlace(data.place));
   }, [id]);
 
   return (

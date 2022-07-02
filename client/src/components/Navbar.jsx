@@ -12,7 +12,7 @@ const Navbar = () => {
       setUser(null);
     });
   };
-
+  console.log(user);
   return (
     <nav>
       <Link to="/">Home</Link>
@@ -20,7 +20,7 @@ const Navbar = () => {
       <Link to="/place/add">Add Place</Link>
       {(user && (
         <>
-          <Link to="/authentication/me">Welcome {user.name}</Link>
+          <Link to={`/profile/${user._id}`}>Welcome {user.name}</Link>
           <button onClick={handleSignOut}>Sign Out</button>
         </>
       )) || (

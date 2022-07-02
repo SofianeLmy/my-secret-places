@@ -1,5 +1,6 @@
 import { listAllPlaceData } from '../services/place';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import { Marker } from '@react-google-maps/api';
 import GenericMap from '../components/GenericMap';
@@ -39,7 +40,9 @@ const HomePage = () => {
           place.pictures &&
           place.pictures.map((image, index) => (
             <div key={image} className="multiple-image-item">
-              <img src={image} alt={`#${index}`} width="200px" />
+              <Link to={`/place/${place._id}`}>
+                <img src={image} alt={`#${index}`} width="200px" />
+              </Link>
             </div>
           ))
         );

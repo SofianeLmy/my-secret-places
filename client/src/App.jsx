@@ -11,11 +11,9 @@ import PlaceAddPage from './pages/PlaceAddPage';
 import PlaceDetailPage from './pages/PlaceDetailPage';
 import PlaceEditPage from './pages/PlaceEditPage';
 
-
 import Navbar from './components/Navbar';
 import AuthenticationContext from './context/authentication';
 import { loadUserInformation } from './services/authentication';
-
 
 const App = () => {
   const [user, setUser] = useState(null);
