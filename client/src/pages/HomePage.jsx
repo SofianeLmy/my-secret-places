@@ -19,34 +19,39 @@ const HomePage = () => {
     <div>
       <h1>My secret places</h1>
 
-      <h2>Some of the latest places added</h2>
-
-      <GenericMap>
-        {places.map((place) => {
-          return (
-            <>
-              <Marker
-                position={{
-                  lat: place.position.coordinates[1],
-                  lng: place.position.coordinates[0]
-                }}
-              />
-            </>
-          );
-        })}
-      </GenericMap>
-      {places.map((place) => {
-        return (
-          place.pictures &&
-          place.pictures.map((image, index) => (
-            <div key={image} className="multiple-image-item">
-              <Link to={`/place/${place._id}`}>
-                <img src={image} alt={`#${index}`} width="200px" />
-              </Link>
-            </div>
-          ))
-        );
-      })}
+      <h3>Some of the latest places added</h3>
+      <div className="content">
+        <div className="mapWrapper">
+          <GenericMap>
+            {places.map((place) => {
+              return (
+                <>
+                  <Marker
+                    position={{
+                      lat: place.position.coordinates[1],
+                      lng: place.position.coordinates[0]
+                    }}
+                  />
+                </>
+              );
+            })}
+          </GenericMap>
+        </div>
+        <div className="placeImageList">
+          {places.map((place) => {
+            return (
+              place.pictures &&
+              place.pictures.map((image, index) => (
+                <div key={image} className="multiple-image-item">
+                  <Link to={`/place/${place._id}`}>
+                    <img src={image} alt={`#${index}`} width="200px" />
+                  </Link>
+                </div>
+              ))
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 };
