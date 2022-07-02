@@ -20,14 +20,13 @@ const Navbar = () => {
       <Link to="/place/add">Add Place</Link>
       {(user && (
         <>
-          <span>Welcome {user.name}</span>
+          <Link to="/authentication/me">Welcome {user.name}</Link>
           <button onClick={handleSignOut}>Sign Out</button>
         </>
       )) || (
         <>
           <Link to="/log-in">Log In</Link>
           <Link to="/register">Register</Link>
-          
         </>
       )}
     </nav>

@@ -34,10 +34,16 @@ const HomePage = () => {
           );
         })}
       </GenericMap>
-
-
-{/* add pictures here */}
-
+      {places.map((place) => {
+        return (
+          place.pictures &&
+          place.pictures.map((image, index) => (
+            <div key={image} className="multiple-image-item">
+              <img src={image} alt={`#${index}`} width="200px" />
+            </div>
+          ))
+        );
+      })}
     </div>
   );
 };

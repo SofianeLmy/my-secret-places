@@ -11,3 +11,9 @@ export const placeEdit = (id, place) =>
 
 export const listAllPlaceData = () =>
   api.get('/').then((response) => response.data);
+
+export const profilePlacesLoad = (id) =>
+  listAllPlaceData().then((data) => {
+    console.log(data);
+    data.places.filter((place) => place.creator._id === id);
+  });
