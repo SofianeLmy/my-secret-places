@@ -8,7 +8,7 @@ import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
 
 const MapInput = () => {
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: "AIzaSyDxPQqy7ovGbO0l2YjeGmKaI8jIvEK3Qfo",
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
   });
 
   const [marker, setMarker] = useState(null);
