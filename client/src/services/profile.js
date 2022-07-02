@@ -8,3 +8,5 @@ export const profileLoad = (id) =>
 
 export const profileEdit = (profile) =>
   api.patch(`/profile`, profile).then((response) => response.data);
+
+// export const profilePlacesLoad = () => [];

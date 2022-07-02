@@ -3,5 +3,8 @@ import api from './api';
 export const placeAdd = (place) =>
   api.post(`/place/add`, place).then((response) => response.data);
 
-  export const placeLoad = (id) =>
+export const placeLoad = (id) =>
   api.get(`/place/${id}`).then((response) => response.data);
+
+export const placeEdit = (id, place) =>
+  api.patch(`/place/${id}`, place).then((response) => response.data);
