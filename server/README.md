@@ -18,10 +18,9 @@ plus links to add place and edit profile.
 
 Profile Edit - /profile/edit - Allows authenticated user to edit their profile and delete profile.
 
-Place Add - /place/add - Allows user to post place with pictures and limited text.
+Place Add - /place/add - Allows user to post place with pictures and limited text. Should be a button displayed when authenticated on the HomePage.
 
-Place Detail - /place/:id - Visualize single place, allows authenticated user to go to the profile page of creator,
-creator can click the button to edit the place.
+Place Detail - /place/:id - Visualize single place, allows authenticated user to go to the profile page of creator, creator can click the button to edit the place.
 
 Place Edit - /place/:id/edit - Allows user to edit the place and delete it.
 

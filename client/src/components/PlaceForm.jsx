@@ -1,4 +1,5 @@
 import MultipleImageInput from './MultipleImageInput';
+import PlaceInputMap from './PlaceInputMap';
 
 const PlaceForm = ({ place, onPlaceChange, onPlaceSubmit, buttonLabel }) => {
   const handlePlaceFormSubmission = (event) => {
@@ -18,6 +19,11 @@ const PlaceForm = ({ place, onPlaceChange, onPlaceSubmit, buttonLabel }) => {
         onChange={(event) =>
           onPlaceChange({ ...place, description: event.target.value })
         }
+      />
+
+      <PlaceInputMap
+        position={place.position}
+        onPositionChange={(position) => onPlaceChange({ ...place, position })}
       />
 
       <label>Place Pictures</label>

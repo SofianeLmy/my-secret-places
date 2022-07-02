@@ -5,7 +5,7 @@ const MultipleImageInput = (props) => (
     <div className="multiple-image-list">
       {props.images.map((image, index) => (
         <div key={image} className="multiple-image-item">
-          <img src={image} alt={`#${index}`} />
+          <img src={image} alt={`#${index}`} width="200px" />
           <button
             type="button"
             onClick={() =>

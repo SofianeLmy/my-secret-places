@@ -5,6 +5,7 @@ import AuthenticationContext from '../context/authentication';
 import ProfileCard from '../components/ProfileCard';
 
 import PlaceInputMap from '../components/PlaceInputMap';
+import MultipleImageInput from '../components/MultipleImageInput';
 
 const PlaceDetailPage = () => {
   const { id } = useParams();
