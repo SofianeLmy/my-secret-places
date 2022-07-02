@@ -15,18 +15,32 @@ const Navbar = () => {
   console.log(user);
   return (
     <nav>
-      <Link to="/">Home</Link>
-      <Link to="/profile/search">Search for Profile</Link>
-      <Link to="/place/add">Add Place</Link>
+      <Link className="link" to="/">
+        Home
+      </Link>
+      <Link className="link" to="/profile/search">
+        Search for Profile
+      </Link>
+      <Link className="link" to="/place/add">
+        Add Place
+      </Link>
       {(user && (
         <>
-          <Link to={`/profile/${user._id}`}>Welcome {user.name}</Link>
-          <button onClick={handleSignOut}>Sign Out</button>
+          <Link className="link" to={`/profile/${user._id}`}>
+            Welcome {user.name}
+          </Link>
+          <Link className="link" onClick={handleSignOut} to="">
+            Sign Out
+          </Link>
         </>
       )) || (
         <>
-          <Link to="/log-in">Log In</Link>
-          <Link to="/register">Register</Link>
+          <Link className="link" to="/log-in">
+            Log In
+          </Link>
+          <Link className="link" to="/register">
+            Register
+          </Link>
         </>
       )}
     </nav>
