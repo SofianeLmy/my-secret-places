@@ -8,3 +8,6 @@ export const placeLoad = (id) =>
 
 export const placeEdit = (id, place) =>
   api.patch(`/place/${id}`, place).then((response) => response.data);
+
+export const listAllPlaceData = () =>
+  api.get('/').then((response) => response.data);

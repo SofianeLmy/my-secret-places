@@ -4,6 +4,8 @@ import { placeLoad } from '../services/place';
 import AuthenticationContext from '../context/authentication';
 import ProfileCard from '../components/ProfileCard';
 
+import PlaceInputMap from '../components/PlaceInputMap';
+
 const PlaceDetailPage = () => {
   const { id } = useParams();
 
@@ -28,6 +30,7 @@ const PlaceDetailPage = () => {
             <Link to={`/place/${id}/edit`}>Edit Place</Link>
           )}
           {user && <button>I like it !</button>}
+          <PlaceInputMap position={place.position} />
         </>
       )}
     </div>

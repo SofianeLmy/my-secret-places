@@ -17,6 +17,7 @@ const Navbar = () => {
     <nav>
       <Link to="/">Home</Link>
       <Link to="/profile/search">Search for Profile</Link>
+      <Link to="/place/add">Add Place</Link>
       {(user && (
         <>
           <span>Welcome {user.name}</span>
@@ -26,6 +27,7 @@ const Navbar = () => {
         <>
           <Link to="/log-in">Log In</Link>
           <Link to="/register">Register</Link>
+          
         </>
       )}
     </nav>

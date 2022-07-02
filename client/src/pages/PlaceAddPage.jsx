@@ -27,7 +27,7 @@ const PlaceAddPage = () => {
         place={place}
         onPlaceChange={setPlace}
         onPlaceSubmit={handlePlaceCreation}
-        buttonLabel="Add a new Place to your Profile"
+        buttonLabel="Add New Place"
       />
     </div>
   );

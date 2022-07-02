@@ -11,8 +11,8 @@ const router = new express.Router();
 router.post('/add', routeGuard, (req, res, next) => {
   const {
     description,
-    pictures
-    //position,
+    pictures,
+    position
   } = req.body;
 
   const creator = req.user._id;
@@ -20,8 +20,8 @@ router.post('/add', routeGuard, (req, res, next) => {
   Place.create({
     creator,
     description,
-    pictures
-    // position
+    pictures, 
+    position
   })
     .then((place) => {
       res.json({ place });
@@ -37,8 +37,8 @@ router.patch('/:id', routeGuard, (req, res, next) => {
 
   const {
     description,
-    pictures
-    //position,
+    pictures, 
+    position
   } = req.body;
 
   const creator = req.user._id;
@@ -48,8 +48,8 @@ router.patch('/:id', routeGuard, (req, res, next) => {
     {
       creator,
       description,
-      pictures
-      // position
+      pictures, 
+      position
     },
     { new: true }
   )
