@@ -1,9 +1,9 @@
-import { listAllPlaceData } from '../services/place';
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { listAllPlaceData } from "../services/place";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-import { Marker } from '@react-google-maps/api';
-import GenericMap from '../components/GenericMap';
+import { Marker } from "@react-google-maps/api";
+import GenericMap from "../components/GenericMap";
 
 const PlaceMap = ({ places }) => {
   const [center, setCenter] = useState({ lat: 0, lng: 0 });
@@ -67,13 +67,36 @@ const HomePage = () => {
     });
   }, []);
 
+  const navigate = useNavigate();
+
+  const handleMarkerClick = (id) => {
+    navigate(`/place/${id}`);
+  };
+
   return (
     <div>
       <h1>My secret places</h1>
 
       <h2>Some of the latest places added</h2>
 
-      <PlaceMap places={places} />
+      <GenericMap>
+        {places.map((place) => {
+          return (
+            <>
+              <Marker
+                label={place.name}
+                onClick={() => {
+                  handleMarkerClick(place._id);
+                }}
+                position={{
+                  lat: place.position.coordinates[1],
+                  lng: place.position.coordinates[0],
+                }}
+              />
+            </>
+          );
+        })}
+      </GenericMap>
       {places.map((place) => {
         return (
           place.pictures &&
