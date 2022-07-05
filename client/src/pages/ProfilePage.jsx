@@ -4,6 +4,7 @@ import { profileLoad } from '../services/profile';
 import GenericMap from '../components/GenericMap';
 import { Marker } from '@react-google-maps/api';
 import './ProfilePage.scss';
+import PlaceMap from '../components/PlaceMap';
 
 const ProfilePage = () => {
   const [profile, setProfile] = useState(null);
@@ -32,20 +33,7 @@ const ProfilePage = () => {
           />
         </>
       )}
-      <GenericMap>
-        {places.map((place) => {
-          return (
-            <>
-              <Marker
-                position={{
-                  lat: place.position.coordinates[1],
-                  lng: place.position.coordinates[0]
-                }}
-              />
-            </>
-          );
-        })}
-      </GenericMap>
+      <PlaceMap places={places} />
       {places &&
         places.map((place) => {
           return (

@@ -1,11 +1,22 @@
 import MultipleImageInput from './MultipleImageInput';
 import PlaceInputMap from './PlaceInputMap';
 
+let selectedCenter = { lat: 42.8, lng: -8.5 };
+
 const PlaceForm = ({ place, onPlaceChange, onPlaceSubmit, buttonLabel }) => {
   const handlePlaceFormSubmission = (event) => {
     event.preventDefault();
     onPlaceSubmit();
   };
+
+  console.log(place);
+
+  if (place.position) {
+    selectedCenter = {
+      lat: place.position.coordinates[1],
+      lng: place.position.coordinates[0]
+    };
+  }
 
   return (
     <form onSubmit={handlePlaceFormSubmission}>
@@ -24,6 +35,7 @@ const PlaceForm = ({ place, onPlaceChange, onPlaceSubmit, buttonLabel }) => {
       <PlaceInputMap
         position={place.position}
         onPositionChange={(position) => onPlaceChange({ ...place, position })}
+        center={selectedCenter}
       />
 
       <label>Place Pictures</label>

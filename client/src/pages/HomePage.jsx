@@ -1,62 +1,7 @@
 import { listAllPlaceData } from '../services/place';
 import { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import './HomePage.scss';
-
-import { Marker } from '@react-google-maps/api';
-import GenericMap from '../components/GenericMap';
-
-const PlaceMap = ({ places }) => {
-  const [center, setCenter] = useState({ lat: 0, lng: 0 });
-
-  useEffect(() => {
-    if (places.length) {
-      const positions = places.map((place) => {
-        return {
-          lat: place.position.coordinates[1],
-          lng: place.position.coordinates[0]
-        };
-      });
-
-      const longitudes = positions
-        .map((position) => position.lng)
-        .filter((value) => typeof value === 'number');
-      const latitudes = positions
-        .map((position) => position.lat)
-        .filter((value) => typeof value === 'number');
-
-      const maximumLongitude = Math.max(...longitudes);
-      const minimumLongitude = Math.min(...longitudes);
-
-      const maximumLatitude = Math.max(...latitudes);
-      const minimumLatitude = Math.min(...latitudes);
-
-      const calculatedCenter = {
-        lat: (maximumLatitude + minimumLatitude) / 2,
-        lng: (maximumLongitude + minimumLongitude) / 2
-      };
-
-      setCenter(calculatedCenter);
-    }
-  }, [places]);
-
-  return (
-    <GenericMap center={center}>
-      {places.map((place) => {
-        return (
-          <>
-            <Marker
-              position={{
-                lat: place.position.coordinates[1],
-                lng: place.position.coordinates[0]
-              }}
-            />
-          </>
-        );
-      })}
-    </GenericMap>
-  );
-};
+import { Link } from 'react-router-dom';
+import PlaceMap from '../components/PlaceMap';
 
 const HomePage = () => {
   const [places, setPlaces] = useState([]);
@@ -68,17 +13,13 @@ const HomePage = () => {
     });
   }, []);
 
-  const navigate = useNavigate();
-
-  const handleMarkerClick = (id) => {
-    navigate(`/place/${id}`);
-  };
-
   return (
     <div>
       <h1>My secret places</h1>
 
-      <GenericMap>
+      <PlaceMap places={places} />
+
+      {/* <GenericMap>
         {places.map((place) => {
           return (
             <>
@@ -95,7 +36,8 @@ const HomePage = () => {
             </>
           );
         })}
-      </GenericMap>
+      </GenericMap>*/}
+
       <div className="multiple-image-list">
         {places.map((place) => {
           return (
