@@ -13,16 +13,16 @@ const PlaceMap = ({ places }) => {
       const positions = places.map((place) => {
         return {
           lat: place.position.coordinates[1],
-          lng: place.position.coordinates[0]
+          lng: place.position.coordinates[0],
         };
       });
 
       const longitudes = positions
         .map((position) => position.lng)
-        .filter((value) => typeof value === 'number');
+        .filter((value) => typeof value === "number");
       const latitudes = positions
         .map((position) => position.lat)
-        .filter((value) => typeof value === 'number');
+        .filter((value) => typeof value === "number");
 
       const maximumLongitude = Math.max(...longitudes);
       const minimumLongitude = Math.min(...longitudes);
@@ -32,7 +32,7 @@ const PlaceMap = ({ places }) => {
 
       const calculatedCenter = {
         lat: (maximumLatitude + minimumLatitude) / 2,
-        lng: (maximumLongitude + minimumLongitude) / 2
+        lng: (maximumLongitude + minimumLongitude) / 2,
       };
 
       setCenter(calculatedCenter);
@@ -47,7 +47,7 @@ const PlaceMap = ({ places }) => {
             <Marker
               position={{
                 lat: place.position.coordinates[1],
-                lng: place.position.coordinates[0]
+                lng: place.position.coordinates[0],
               }}
             />
           </>
