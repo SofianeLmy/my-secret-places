@@ -79,6 +79,7 @@ const HomePage = () => {
 
       <h2>Some of the latest places added</h2>
 
+      {/* <PlaceMap places={places} /> */}
       <GenericMap>
         {places.map((place) => {
           return (
