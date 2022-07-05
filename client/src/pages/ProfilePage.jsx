@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { profileLoad } from '../services/profile';
 import GenericMap from '../components/GenericMap';
 import { Marker } from '@react-google-maps/api';
+import './ProfilePage.scss';
 
 const ProfilePage = () => {
   const [profile, setProfile] = useState(null);
@@ -19,11 +20,16 @@ const ProfilePage = () => {
   }, [id]);
 
   return (
-    <div>
+    <div className="profile">
       {profile && (
         <>
-          <img src={profile.picture} alt={profile.name} width="200px" />
           <h1>{profile.name}</h1>
+          <img
+            className="profilePic"
+            src={profile.picture}
+            alt={profile.name}
+            width="200px"
+          />
         </>
       )}
       <GenericMap>

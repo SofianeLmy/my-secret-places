@@ -2,3 +2,32 @@
   display: flex;
   flex-direction: column;
 }
+
+.multiple-image-item {
+  max-width: 40%;
+  /*
+  img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+  */
+  @media (min-width: 600px) {
+    max-width: 30%;
+  }
+  @media (min-width: 1200px) {
+    max-width: 20%;
+  }
+}
+
+.multiple-image-list {
+  margin: 1em 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+h1 {
+  text-align: center;
+}

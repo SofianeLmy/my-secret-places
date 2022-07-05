@@ -12,7 +12,7 @@ const Navbar = () => {
       setUser(null);
     });
   };
-  console.log(user);
+
   return (
     <nav>
       <Link className="link" to="/">

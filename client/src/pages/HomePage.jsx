@@ -1,9 +1,10 @@
-import { listAllPlaceData } from "../services/place";
-import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { listAllPlaceData } from '../services/place';
+import { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import './HomePage.scss';
 
-import { Marker } from "@react-google-maps/api";
-import GenericMap from "../components/GenericMap";
+import { Marker } from '@react-google-maps/api';
+import GenericMap from '../components/GenericMap';
 
 const PlaceMap = ({ places }) => {
   const [center, setCenter] = useState({ lat: 0, lng: 0 });
@@ -77,8 +78,6 @@ const HomePage = () => {
     <div>
       <h1>My secret places</h1>
 
-      <h2>Some of the latest places added</h2>
-
       <GenericMap>
         {places.map((place) => {
           return (
@@ -90,25 +89,27 @@ const HomePage = () => {
                 }}
                 position={{
                   lat: place.position.coordinates[1],
-                  lng: place.position.coordinates[0],
+                  lng: place.position.coordinates[0]
                 }}
               />
             </>
           );
         })}
       </GenericMap>
-      {places.map((place) => {
-        return (
-          place.pictures &&
-          place.pictures.map((image, index) => (
-            <div key={image} className="multiple-image-item">
-              <Link to={`/place/${place._id}`}>
-                <img src={image} alt={`#${index}`} width="200px" />
-              </Link>
-            </div>
-          ))
-        );
-      })}
+      <div className="multiple-image-list">
+        {places.map((place) => {
+          return (
+            place.pictures &&
+            place.pictures.map((image, index) => (
+              <div key={image} className="multiple-image-item">
+                <Link to={`/place/${place._id}`}>
+                  <img src={image} alt={`#${index}`} />
+                </Link>
+              </div>
+            ))
+          );
+        })}
+      </div>
     </div>
   );
 };
