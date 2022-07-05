@@ -2,6 +2,7 @@ import { listAllPlaceData } from '../services/place';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import PlaceMap from '../components/PlaceMap';
+import './HomePage.scss';
 
 const HomePage = () => {
   const [places, setPlaces] = useState([]);
