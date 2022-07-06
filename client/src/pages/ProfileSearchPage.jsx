@@ -28,9 +28,11 @@ const ProfileSearchPage = () => {
 
         <button>Search</button>
       </form>
-      {profiles.map((profile) => (
-        <ProfileCard key={profile._id} profile={profile} />
-      ))}
+      <div className="profile-card-list">
+        {profiles.map((profile) => (
+          <ProfileCard key={profile._id} profile={profile} />
+        ))}
+      </div>
     </div>
   );
 };

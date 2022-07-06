@@ -23,6 +23,24 @@ const AuthenticationForm = (props) => {
         </>
       )}
 
+      {props.displayInputs.includes('description') && (
+        <>
+          <label htmlFor="input-description">Description</label>
+          <input
+            id="input-description"
+            type="text"
+            placeholder="Description"
+            value={props.user.myDescription}
+            onChange={(event) =>
+              props.onUserChange({
+                ...props.user,
+                myDescription: event.target.value
+              })
+            }
+          />
+        </>
+      )}
+
       {props.displayInputs.includes('email') && (
         <>
           <label htmlFor="input-email">Email</label>

@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
+import './ProfileCard.scss';
 
 const ProfileCard = ({ profile }) => (
   <Link className="profile-card" to={`/profile/${profile._id}`}>
-    <img src={profile.picture} alt={profile.name} width="300px" />
-    <span>{profile.name}</span>
+    <h3>{profile.name}</h3>
+    <img src={profile.picture} alt={profile.name} />
   </Link>
 );
 
