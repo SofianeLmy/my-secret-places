@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import AuthenticationForm from '../components/AuthenticationForm';
 import AuthenticationContext from '../context/authentication';
 import { registerUser } from '../services/authentication';
+import './RegisterPage.scss';
 
 const RegisterPage = () => {
   const navigate = useNavigate();
@@ -24,11 +25,11 @@ const RegisterPage = () => {
   };
 
   return (
-    <div>
-      <h1>Register New Account</h1>
+    <div className='register-container'>
+      <h3>Register before the travel begins ✈️</h3>
       <AuthenticationForm
         user={user}
-        buttonLabel="Register New Account"
+        buttonLabel="Start your journey"
         displayInputs={['name', 'email', 'password', 'picture']}
         onUserChange={setUserState}
         onAuthenticationSubmit={handleRegistration}

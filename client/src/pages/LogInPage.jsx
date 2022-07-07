@@ -20,7 +20,9 @@ const LogInPage = () => {
 
   return (
     <div>
+      
       <form onSubmit={handleLogIn}>
+      <h3>Happy to see you back 😍 Log in ! </h3>
         <label htmlFor="input-email">Email</label>
         <input
           id="input-email"
@@ -39,7 +41,7 @@ const LogInPage = () => {
           onChange={(event) => setPassword(event.target.value)}
         />
 
-        <button>Log In to Existing Account</button>
+        <button>Let's explore</button>
       </form>
     </div>
   );

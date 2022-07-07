@@ -1,4 +1,5 @@
 import ImageInput from './ImageInput';
+import './AuthenticationForm.scss';
 
 const AuthenticationForm = (props) => {
   const handleSubmission = (event) => {
@@ -58,23 +59,28 @@ const AuthenticationForm = (props) => {
 
       {props.displayInputs.includes('picture') && (
         <>
-          {/* <label htmlFor="input-picture">Picture</label>
-          <input
-            id="input-picture"
-            type="text"
-            placeholder="Picture"
-            value={props.user.picture}
-            onChange={(event) =>
-              props.onUserChange({ ...props.user, picture: event.target.value })
-            }
-          /> */}
-          <ImageInput
-            image={props.user.picture}
-            onImageChange={(picture) => {
-              console.log(picture);
-              props.onUserChange({ ...props.user, picture });
-            }}
-          />
+        {/* <label htmlFor="input-picture">Picture</label>
+        <input
+          id="input-picture"
+          type="text"
+          placeholder="Picture"
+          value={props.user.picture}
+          onChange={(event) =>
+            props.onUserChange({ ...props.user, picture: event.target.value })
+          }
+        /> */}
+        <div className="add-image-component">
+        <label>Add your profile picture</label>
+        <ImageInput
+          image={props.user.picture}
+          onImageChange={(picture) => {
+            console.log(picture);
+            props.onUserChange({ ...props.user, picture });
+          }}
+          
+        />
+        </div>
+        <br />
         </>
       )}
 

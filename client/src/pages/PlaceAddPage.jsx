@@ -22,14 +22,17 @@ const PlaceAddPage = () => {
 
   return (
     <div>
-      <h1>Add a new Place</h1>
+      <h3>Add a new Place to your profile 😎</h3>
+      <br />
       <PlaceForm
         place={place}
         onPlaceChange={setPlace}
         onPlaceSubmit={handlePlaceCreation}
         buttonLabel="Add New Place"
       />
+      <br />
     </div>
+    
   );
 };
 

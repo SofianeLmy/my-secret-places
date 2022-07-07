@@ -1,5 +1,6 @@
 import MultipleImageInput from './MultipleImageInput';
 import PlaceInputMap from './PlaceInputMap';
+import './PlaceForm.scss';
 
 let selectedCenter = { lat: 42.8, lng: -8.5 };
 
@@ -19,33 +20,36 @@ const PlaceForm = ({ place, onPlaceChange, onPlaceSubmit, buttonLabel }) => {
   }
 
   return (
-    <form onSubmit={handlePlaceFormSubmission}>
-      <label htmlFor="input-description">
-        A short Description of the Place
-      </label>
-      <textarea
-        id="input-description"
-        placeholder="A short Description of the Place"
-        value={place.description}
-        onChange={(event) =>
-          onPlaceChange({ ...place, description: event.target.value })
-        }
-      />
-
-      <PlaceInputMap
-        position={place.position}
-        onPositionChange={(position) => onPlaceChange({ ...place, position })}
-        center={selectedCenter}
-      />
-
-      <label>Place Pictures</label>
-      <MultipleImageInput
-        images={place.pictures}
-        onImagesChange={(pictures) => onPlaceChange({ ...place, pictures })}
-      />
-
-      <button>{buttonLabel}</button>
-    </form>
+    <div className="large-component">
+      <form className="form-component" onSubmit={handlePlaceFormSubmission}>
+        <label htmlFor="input-description">Place Description</label>
+        <textarea
+          id="input-description"
+          placeholder="Tell us about your secret place..."
+          value={place.description}
+          onChange={(event) =>
+            onPlaceChange({ ...place, description: event.target.value })
+          }
+        />
+        <div className="add-pictures-component">
+          <label >🌴Add pictures of your place</label>
+          <MultipleImageInput
+            images={place.pictures}
+            onImagesChange={(pictures) => onPlaceChange({ ...place, pictures })}
+          />
+        </div>
+        <br />
+        <label className="locate-label">Position your place on the Map</label>
+        <br />
+        <PlaceInputMap
+          position={place.position}
+          onPositionChange={(position) => onPlaceChange({ ...place, position })}
+          center={selectedCenter}
+        />
+        <br />
+        <button>{buttonLabel}</button>
+      </form>
+    </div>
   );
 };
 

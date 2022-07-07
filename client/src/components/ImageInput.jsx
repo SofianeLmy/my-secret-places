@@ -15,7 +15,10 @@ const ImageInput = (props) => {
   return (
     <>
       {props.image && (
-        <img style={{ maxWidth: '20em' }} src={props.image} alt="Selected" />
+        <>
+        <br />
+        <img style={{ maxWidth: '10em' }} src={props.image} alt="Selected" />
+        </>
       )}
       <IKContext
         publicKey={process.env.REACT_APP_IMAGEKIT_PUBLIC_API_KEY}
