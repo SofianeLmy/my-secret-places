@@ -15,7 +15,7 @@ const GenericMap = ({ children, ...props }) => {
     (isLoaded && (
       <GoogleMap
         mapContainerStyle={{
-          width: "70%",
+          width: "100%",
           minHeight: "30rem",
           height: "500px",
         }}
