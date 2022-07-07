@@ -1,11 +1,6 @@
-.profilePic {
-  border-radius: 50%;
-  border: 2px solid #50575e;
-  margin-bottom: 1rem;
-}
-
-.profile {
-  text-align: center;
+.content {
+  display: flex;
+  flex-direction: column;
 }
 
 .multiple-image-item {
@@ -24,6 +19,10 @@
   }
 }
 
+img {
+  width: 200px;
+}
+
 .multiple-image-list {
   margin: 1em 0;
   display: flex;
@@ -33,7 +32,25 @@
   gap: 1em;
 }
 
-button {
-  padding: 1rem;
-  margin: 1rem;
+.creator {
+  text-align: center;
+  a:hover {
+    color: #bbe2c6;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
+#profilePic {
+  text-align: center;
+  width: 200px;
+  border-radius: 50%;
+  border: 2px solid #50575e;
+  margin-bottom: 1rem;
 }

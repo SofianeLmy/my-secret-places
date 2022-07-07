@@ -1,0 +1,23 @@
+.profile-card {
+  border: 3px solid #8ab4f8;
+  padding: 1rem;
+  width: 250px;
+  margin: 1rem;
+  background-color: #dcdcde;
+}
+
+h3 {
+  text-align: center;
+}
+
+img {
+  width: 200px;
+  max-width: 40%;
+
+  @media (min-width: 600px) {
+    max-width: 30%;
+  }
+  @media (min-width: 1200px) {
+    max-width: 20%;
+  }
+}

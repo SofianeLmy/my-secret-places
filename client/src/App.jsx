@@ -6,10 +6,11 @@ import RegisterPage from './pages/RegisterPage';
 import LogInPage from './pages/LogInPage';
 import ProfileSearchPage from './pages/ProfileSearchPage';
 import ProfilePage from './pages/ProfilePage';
+import PlaceEditPage from './pages/PlaceEditPage';
 
 import PlaceAddPage from './pages/PlaceAddPage';
 import PlaceDetailPage from './pages/PlaceDetailPage';
-import PlaceEditPage from './pages/PlaceEditPage';
+import ProfileEditPage from './pages/ProfileEditPage';
 
 import Navbar from './components/Navbar';
 import AuthenticationContext from './context/authentication';
@@ -34,6 +35,7 @@ const App = () => {
           <Route path="/log-in" element={<LogInPage />} />
           <Route path="/profile/search" element={<ProfileSearchPage />} />
           <Route path="/profile/:id" element={<ProfilePage />} />
+          <Route path="/profile/:id/edit" element={<ProfileEditPage />} />
           <Route path="/place/add" element={<PlaceAddPage />} />
           <Route path="/place/:id" element={<PlaceDetailPage />} />
           <Route path="/place/:id/edit" element={<PlaceEditPage />} />

@@ -20,7 +20,7 @@ const ProfileEditPage = () => {
   const handleProfileEdit = () => {
     profileEdit(profile).then((data) => {
       setUser(data.profile);
-      navigate('/');
+      navigate('/profile/{user._id}');
     });
   };
 
@@ -31,7 +31,7 @@ const ProfileEditPage = () => {
         <AuthenticationForm
           user={profile}
           buttonLabel="Edit Profile"
-          displayInputs={['name', 'email', 'picture']}
+          displayInputs={['name', 'email', 'picture', 'description']}
           onUserChange={setProfile}
           onAuthenticationSubmit={handleProfileEdit}
         />
