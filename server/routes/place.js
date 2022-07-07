@@ -9,18 +9,14 @@ const router = new express.Router();
 
 // - POST - '/place/add' - Add a new place.
 router.post('/add', routeGuard, (req, res, next) => {
-  const {
-    description,
-    pictures,
-    position
-  } = req.body;
+  const { description, pictures, position } = req.body;
 
   const creator = req.user._id;
 
   Place.create({
     creator,
     description,
-    pictures, 
+    pictures,
     position
   })
     .then((place) => {
@@ -35,11 +31,7 @@ router.post('/add', routeGuard, (req, res, next) => {
 router.patch('/:id', routeGuard, (req, res, next) => {
   const { id } = req.params;
 
-  const {
-    description,
-    pictures, 
-    position
-  } = req.body;
+  const { description, pictures, position } = req.body;
 
   const creator = req.user._id;
 
@@ -48,7 +40,7 @@ router.patch('/:id', routeGuard, (req, res, next) => {
     {
       creator,
       description,
-      pictures, 
+      pictures,
       position
     },
     { new: true }
@@ -75,7 +67,7 @@ router.delete('/:id', routeGuard, (req, res, next) => {
 });
 
 // - GET - '/house/search' - Allows user to search for houses.
-router.get('/search', (req, res, next) => {
+/* router.get('/search', (req, res, next) => {
   const {
     purpose,
     type,
@@ -100,7 +92,7 @@ router.get('/search', (req, res, next) => {
     .catch((error) => {
       next(error);
     });
-});
+}); */
 
 // - GET - '/place/:id' - Loads single place.
 router.get('/:id', (req, res, next) => {

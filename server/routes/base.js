@@ -11,11 +11,11 @@ const router = express.Router();
 router.get('/', (req, res, next) => {
   let places;
   Place.find()
-    .limit(10)
+    .limit(30)
     .sort({ createdAt: -1 })
     .then((documents) => {
       places = documents;
-      return User.find().limit(10).sort({ createdAt: -1 });
+      return User.find().limit(30).sort({ createdAt: -1 });
     })
     .then((profiles) => {
       res.json({ places, profiles });
