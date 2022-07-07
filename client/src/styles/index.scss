@@ -10,9 +10,29 @@ html {
 
 body {
   color: #50575e;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   max-width: 1200px;
   margin: 0 auto;
+  background-image: url("../image/Background_world1.JPG");
+
+  // option 1 - small icon
+  /*background-position-x: 20%;
+  background-position-y: 18%;
+  background-repeat: no-repeat;
+  background-size: 20%;*/
+
+  // option 2 - medium icon
+  /*background-position-x: 12%;
+  background-position-y: 10%;
+  background-repeat: no-repeat;
+  background-size: 25%;*/
+
+  // option 3 - large icon
+  background-position-x: 9%;
+  background-position-y: 4%;
+  background-repeat: no-repeat;
+  background-size: 35%;
+
   /*
   margin: 5;
   display: flex;
