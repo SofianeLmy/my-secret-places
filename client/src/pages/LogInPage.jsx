@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import AuthenticationContext from '../context/authentication';
 import { logInUser } from '../services/authentication';
 
@@ -14,7 +14,7 @@ const LogInPage = () => {
     event.preventDefault();
     logInUser({ email, password }).then((data) => {
       setUser(data.user);
-      navigate('/');
+      navigate(`/profile/${data.user._id}`);
     });
   };
 
@@ -43,6 +43,9 @@ const LogInPage = () => {
 
         <button>Let's explore</button>
       </form>
+      <p>
+        If you don't have an account, register <Link to="/register">here</Link>
+      </p>
     </div>
   );
 };

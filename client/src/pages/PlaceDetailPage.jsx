@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { placeLoad } from '../services/place';
 import AuthenticationContext from '../context/authentication';
 import PlaceInputMap from '../components/PlaceInputMap';
+import './PlaceDetailPage.scss';
 
 const PlaceDetailPage = () => {
   const { id } = useParams();
@@ -18,18 +19,17 @@ const PlaceDetailPage = () => {
   // if I check if user is created & creator is the user, it doesn't render the Link.
 
   return (
-    <div>
+    <div className="creator">
       {console.log(place)}
       {place && (
         <>
           <h2> {place.description} </h2>
           <img
+            id="profilePic"
             src={place.creator.picture}
             alt={place.creator.name}
-            width="80px"
           />
-          <span>{place.creator.name}</span>
-          <br />
+          <p>{place.creator.name}</p>
           {user && place.creator._id === user._id && (
             <Link to={`/place/${id}/edit`}>Edit Place</Link>
           )}
@@ -41,12 +41,14 @@ const PlaceDetailPage = () => {
               lng: place.position.coordinates[0]
             }}
           />
-          {place.pictures &&
-            place.pictures.map((image, index) => (
-              <div key={image} className="multiple-image-item">
-                <img src={image} alt={`#${index}`} width="200px" />
-              </div>
-            ))}
+          <div className="multiple-image-list">
+            {place.pictures &&
+              place.pictures.map((image, index) => (
+                <div key={image} className="multiple-image-item">
+                  <img src={image} alt={`#${index}`} />
+                </div>
+              ))}
+          </div>
         </>
       )}
     </div>

@@ -19,13 +19,13 @@ const Navbar = () => {
         Home
       </Link>
       <Link className="link" to="/profile/search">
-        Search for Profile
-      </Link>
-      <Link className="link" to="/place/add">
-        Add Place
+        Search For A Person
       </Link>
       {(user && (
         <>
+          <Link className="link" to="/place/add">
+            Add Your Secret Place
+          </Link>
           <Link className="link" to={`/profile/${user._id}`}>
             Welcome {user.name}
           </Link>
