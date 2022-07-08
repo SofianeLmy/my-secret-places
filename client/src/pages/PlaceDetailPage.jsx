@@ -24,23 +24,19 @@ const PlaceDetailPage = () => {
       {place && (
         <>
           <h2> {place.description} </h2>
-          <img
-            id="profilePic"
-            src={place.creator.picture}
-            alt={place.creator.name}
-          />
-          <p>{place.creator.name}</p>
+          <Link className="profile-card" to={`/profile/${place.creator._id}`}>
+            <img
+              id="profilePic"
+              src={place.creator.picture}
+              alt={place.creator.name}
+            />
+            <p>{place.creator.name}</p>
+          </Link>
           {user && place.creator._id === user._id && (
             <Link to={`/place/${id}/edit`}>Edit Place</Link>
           )}
+          <br />
           {user && <button>I like it !</button>}
-          <PlaceInputMap
-            position={place.position}
-            center={{
-              lat: place.position.coordinates[1],
-              lng: place.position.coordinates[0]
-            }}
-          />
           <div className="multiple-image-list">
             {place.pictures &&
               place.pictures.map((image, index) => (
@@ -49,6 +45,14 @@ const PlaceDetailPage = () => {
                 </div>
               ))}
           </div>
+          <br />
+          <PlaceInputMap
+            position={place.position}
+            center={{
+              lat: place.position.coordinates[1],
+              lng: place.position.coordinates[0]
+            }}
+          />
         </>
       )}
     </div>

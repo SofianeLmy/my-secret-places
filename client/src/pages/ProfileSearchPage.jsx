@@ -18,6 +18,7 @@ const ProfileSearchPage = () => {
     <div>
       <form className="profile-search-form" onSubmit={handleSearch}>
         <label htmlFor="input-search-term">Search by name</label>
+        <br />
         <input
           id="input-search-term"
           type="text"

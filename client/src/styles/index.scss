@@ -10,10 +10,10 @@ html {
 
 body {
   color: #50575e;
-  font-family: "Quicksand", sans-serif;
+  font-family: 'Quicksand', sans-serif;
   max-width: 1200px;
   margin: 0 auto;
-  background-image: url("../image/Background_world1.JPG");
+  background-image: url('../image/Background_world1.JPG');
   // option 3 - large icon
   background-position-x: 11%;
   background-position-y: 6%;
@@ -31,7 +31,7 @@ body {
 }
 
 .multiple-image-list {
-  margin: 0em 0em 1em 12em;
+  margin: 1em 0em 1em 10em;
   display: flex;
   flex-direction: row;
   justify-content: right;
@@ -43,11 +43,13 @@ body {
 
 .multiple-image-item {
   margin: 0.1em;
-  max-width: 10%;
+  max-width: 20%;
 
   img {
     aspect-ratio: 1 / 1;
     object-fit: cover;
+    border: 1px solid #50575e;
+    border-radius: 3%;
   }
 
   @media (min-width: 600px) {
@@ -61,10 +63,10 @@ body {
 img {
   max-width: 100%;
 }
-input[type="text"],
-input[type="number"],
-input[type="email"],
-input[type="password"],
+input[type='text'],
+input[type='number'],
+input[type='email'],
+input[type='password'],
 textarea,
 select,
 button,
@@ -110,5 +112,9 @@ form {
   display: flex;
   flex-direction: column;
   padding: 0px 200px;
-  color:black;
+  color: #50575e;
+}
+
+p {
+  text-align: center;
 }

@@ -20,7 +20,7 @@ const ProfileEditPage = () => {
   const handleProfileEdit = () => {
     profileEdit(profile).then((data) => {
       setUser(data.profile);
-      navigate('/profile/{user._id}');
+      navigate(`/profile/${user._id}`);
     });
   };
 

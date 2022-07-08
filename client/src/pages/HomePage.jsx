@@ -1,9 +1,9 @@
-import { listAllPlaceData } from "../services/place";
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import PlaceMap from "../components/PlaceMap";
-import "./HomePage.scss";
-import React from "react";
+import { listAllPlaceData } from '../services/place';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import PlaceMap from '../components/PlaceMap';
+import './HomePage.scss';
+import React from 'react';
 
 const HomePage = () => {
   const [places, setPlaces] = useState([]);
@@ -36,15 +36,6 @@ const HomePage = () => {
               );
             })}
           </div>
-        </div>
-        <div className="footer">
-          <p>
-            © Brought to you by Inger, Sina and Sofiane | Web-Dev Bootcamp |
-            Ironhack Jan-22
-            <br />
-            <br />
-            With the helpful collaboration of Stefano, Ana and José.
-          </p>
         </div>
       </div>
     </div>

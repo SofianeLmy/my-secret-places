@@ -8,19 +8,21 @@
   text-align: center;
 }
 
-.multiple-image-item {
-  max-width: 40%;
-  /*
+.profile {
+  .multiple-image-item {
+    max-width: 25%;
+    /*
   img {
     aspect-ratio: 1 / 1;
     object-fit: cover;
   }
   */
-  @media (min-width: 600px) {
-    max-width: 30%;
-  }
-  @media (min-width: 1200px) {
-    max-width: 20%;
+    @media (min-width: 600px) {
+      max-width: 30%;
+    }
+    @media (min-width: 1200px) {
+      max-width: 20%;
+    }
   }
 }
 
