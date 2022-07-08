@@ -1,13 +1,12 @@
-
-  .add-pictures-component{
-    display:flex;
-    justify-content: space-around;
-    align-items: center;
-    position:left;
-    padding-bottom: 30px;
-    border-bottom: 1px solid lightgrey;
+.add-pictures-component {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 15px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid lightgray;
 }
 
-.locate-label{
-  padding:5px 140px;
+.locate-label {
+  padding: 5px 100px;
 }

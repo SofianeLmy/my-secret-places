@@ -26,11 +26,11 @@ const ProfileEditPage = () => {
 
   return (
     <div>
-      <h1>Profile Edit</h1>
+      <h3>Edit your profile in a glance ⚡️</h3>
       {profile && (
         <AuthenticationForm
           user={profile}
-          buttonLabel="Edit Profile"
+          buttonLabel="Save your new profile"
           displayInputs={['name', 'email', 'picture', 'description']}
           onUserChange={setProfile}
           onAuthenticationSubmit={handleProfileEdit}

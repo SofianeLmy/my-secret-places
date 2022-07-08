@@ -77,6 +77,7 @@ button,
   background: transparent;
   margin-bottom: 1rem;
   border-radius: 0.25rem;
+  background-color: white;
 }
 
 .btn {
@@ -108,5 +109,6 @@ button:hover {
 form {
   display: flex;
   flex-direction: column;
-  padding: 0px 240px;
+  padding: 0px 200px;
+  color:black;
 }

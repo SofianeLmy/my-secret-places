@@ -32,11 +32,15 @@ const PlaceForm = ({ place, onPlaceChange, onPlaceSubmit, buttonLabel }) => {
           }
         />
         <div className="add-pictures-component">
+          <div>
           <label >🌴Add pictures of your place</label>
+          </div>
+          <div>
           <MultipleImageInput
             images={place.pictures}
             onImagesChange={(pictures) => onPlaceChange({ ...place, pictures })}
           />
+          </div>
         </div>
         <br />
         <label className="locate-label">Position your place on the Map</label>
