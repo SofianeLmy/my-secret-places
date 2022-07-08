@@ -14,24 +14,11 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   background-image: url("../image/Background_world1.JPG");
-
-  // option 1 - small icon
-  /*background-position-x: 20%;
-  background-position-y: 18%;
-  background-repeat: no-repeat;
-  background-size: 20%;*/
-
-  // option 2 - medium icon
-  /*background-position-x: 12%;
-  background-position-y: 10%;
-  background-repeat: no-repeat;
-  background-size: 25%;*/
-
   // option 3 - large icon
-  background-position-x: 9%;
-  background-position-y: 4%;
+  background-position-x: 11%;
+  background-position-y: 6%;
   background-repeat: no-repeat;
-  background-size: 35%;
+  background-size: 34%;
 
   /*
   margin: 5;
@@ -43,13 +30,41 @@ body {
   font-size: calc(10px + 2vmin);
 }
 
+.multiple-image-list {
+  margin: 0em 0em 1em 12em;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: right;
+  flex-wrap: wrap;
+  gap: 0.1em;
+  max-width: 70%;
+}
+
+.multiple-image-item {
+  margin: 0.1em;
+  max-width: 10%;
+
+  img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  @media (min-width: 600px) {
+    max-width: 10%;
+  }
+  @media (min-width: 1200px) {
+    max-width: 10%;
+  }
+}
+
 img {
   max-width: 100%;
 }
-input[type='text'],
-input[type='number'],
-input[type='email'],
-input[type='password'],
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
 textarea,
 select,
 button,
@@ -79,16 +94,15 @@ button {
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  background-color :  #FFFFFF;
-   color:  #8ab4f8;
-  border:4px solid #8ab4f8;
-  transition: 0.2s ease ;
-  margin:0;
+  background-color: #ffffff;
+  color: #8ab4f8;
+  border: 4px solid #8ab4f8;
+  transition: 0.2s ease;
+  margin: 0;
 }
 
-
-button:hover{
-  border-radius:3rem;
+button:hover {
+  border-radius: 3rem;
 }
 
 form {
@@ -96,5 +110,3 @@ form {
   flex-direction: column;
   padding: 0px 240px;
 }
-
-

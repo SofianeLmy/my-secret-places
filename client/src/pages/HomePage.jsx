@@ -18,7 +18,7 @@ const HomePage = () => {
   return (
     <div>
       <div>
-        <h1> . . . My secret places</h1>
+        <h1> . . . My secret places </h1>
         <div className="HP-container">
           <PlaceMap places={places} />
 
