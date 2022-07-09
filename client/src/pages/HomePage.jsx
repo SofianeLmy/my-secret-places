@@ -23,7 +23,7 @@ const HomePage = () => {
           <PlaceMap places={places} />
 
           <div className="multiple-image-list">
-            {places.map((place) => {
+            {places.slice(2, 12).map((place) => {
               return (
                 place.pictures &&
                 place.pictures.map((image, index) => (
@@ -37,6 +37,15 @@ const HomePage = () => {
             })}
           </div>
         </div>
+      </div>
+      <div className="footer">
+        <p>
+          © Brought to you by Inger, Sina and Sofiane | Web-Dev Bootcamp |
+          Ironhack Jan-22
+          <br />
+          <br />
+          With the helpful collaboration of Stefano, Ana and José.
+        </p>
       </div>
     </div>
   );

@@ -25,12 +25,18 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className='register-container'>
+    <div className="register-container">
       <h3>Register before the travel begins ✈️</h3>
       <AuthenticationForm
         user={user}
         buttonLabel="Start your journey"
-        displayInputs={['name', 'email', 'password', 'picture']}
+        displayInputs={[
+          'name',
+          'email',
+          'password',
+          'picture',
+          'myDescription'
+        ]}
         onUserChange={setUserState}
         onAuthenticationSubmit={handleRegistration}
       />

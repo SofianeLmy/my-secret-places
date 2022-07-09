@@ -33,10 +33,12 @@ const PlaceDetailPage = () => {
             <p>{place.creator.name}</p>
           </Link>
           {user && place.creator._id === user._id && (
-            <Link to={`/place/${id}/edit`}>Edit Place</Link>
+            <button>
+              <Link to={`/place/${id}/edit`}>Edit Place</Link>
+            </button>
           )}
           <br />
-          {user && <button>I like it !</button>}
+          <br />
           <div className="multiple-image-list">
             {place.pictures &&
               place.pictures.map((image, index) => (

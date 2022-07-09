@@ -24,7 +24,7 @@ const AuthenticationForm = (props) => {
         </>
       )}
 
-      {props.displayInputs.includes('description') && (
+      {props.displayInputs.includes('myDescription') && (
         <>
           <label htmlFor="input-description">Description</label>
           <input
@@ -59,7 +59,7 @@ const AuthenticationForm = (props) => {
 
       {props.displayInputs.includes('picture') && (
         <>
-        {/* <label htmlFor="input-picture">Picture</label>
+          {/* <label htmlFor="input-picture">Picture</label>
         <input
           id="input-picture"
           type="text"
@@ -69,18 +69,17 @@ const AuthenticationForm = (props) => {
             props.onUserChange({ ...props.user, picture: event.target.value })
           }
         /> */}
-        <div className="add-image-component">
-        <label>Add your profile picture</label>
-        <ImageInput
-          image={props.user.picture}
-          onImageChange={(picture) => {
-            console.log(picture);
-            props.onUserChange({ ...props.user, picture });
-          }}
-          
-        />
-        </div>
-        <br />
+          <div className="add-image-component">
+            <label>Add your profile picture</label>
+            <ImageInput
+              image={props.user.picture}
+              onImageChange={(picture) => {
+                console.log(picture);
+                props.onUserChange({ ...props.user, picture });
+              }}
+            />
+          </div>
+          <br />
         </>
       )}
 

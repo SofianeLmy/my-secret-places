@@ -31,7 +31,7 @@ const ProfileEditPage = () => {
         <AuthenticationForm
           user={profile}
           buttonLabel="Save your new profile"
-          displayInputs={['name', 'email', 'picture', 'description']}
+          displayInputs={['name', 'email', 'picture', 'myDescription']}
           onUserChange={setProfile}
           onAuthenticationSubmit={handleProfileEdit}
         />
