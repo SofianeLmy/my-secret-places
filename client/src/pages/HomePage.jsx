@@ -23,7 +23,7 @@ const HomePage = () => {
           <PlaceMap places={places} />
 
           <div className="multiple-image-list">
-            {places.slice(2, 12).map((place) => {
+            {places.slice(0, 10).map((place) => {
               return (
                 place.pictures &&
                 place.pictures.map((image, index) => (
